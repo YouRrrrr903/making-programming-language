@@ -9,7 +9,7 @@ def transpile(lines):    #lines는 새로운 언어 코드가 들어있는 리�
 
         elif stripped_line.startswith('set '):   #만약 코드가 set으로 시작되면
             python_line = stripped_line[4:]      #5번째 글자부터 파이선 코드로 저장(set 빼고)
-            python_lines.append(python_line)
+            python_lines.append(python_line)     #리스트에 변환(?)된 코드 추가
 
         elif stripped_line.startswith('print '):  #만약 코드가 print로 시작하면
             expression = stripped_line[6:]        #print+공백 뒤 7번째 글자부터 expression에 저장
