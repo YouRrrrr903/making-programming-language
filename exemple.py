@@ -18,8 +18,8 @@ def transpile(lines):    #lines는 새로운 언어 코드가 들어있는 리�
 
         else:     
             continue
-    return '\n'.join(python_lines)
-
+    return '\n'.join(python_lines)     #한줄식 분리되어 있는 리스트 값들을 합침(줄바꿈으로)
+                                        # ----> 파이선 코드로 실행하기 위함
 
 def execute_python_code(python_code):    #파이선 코드로 실행-->결과
     exec(python_code)
