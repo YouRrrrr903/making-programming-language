@@ -52,3 +52,41 @@ while True:
 
 transpiled_code = transpile(lines)  # 변환된 코드를 얻기
 execute_python_code(transpiled_code)  # 변환된 코드를 실행하기
+--------------------------------------------------------------------------------------------------------
+def get_user_input():
+    lines = []
+    print("코드를 입력하세요 (종료하려면 빈 줄을 입력하세요):")
+    while True:
+        line = input()
+        if line == "":  # 빈 줄 입력 시 종료
+            break
+        lines.append(line)
+    return lines
+
+def transpile(lines):
+    # 여기에 변환 로직을 작성하세요.
+    # 예시로 입력된 코드를 그대로 반환합니다.
+    return "\n".join(lines)
+
+def execute_python_code(code):
+    # exec를 사용하여 변환된 코드를 실행합니다.
+    try:
+        exec(code)
+    except Exception as e:
+        print(f"코드 실행 중 오류 발생: {e}")
+
+def main():
+    lines = get_user_input()
+
+    try:
+        transpiled_code = transpile(lines)  # 변환된 코드를 얻기
+        print("\n변환된 코드:")
+        print(transpiled_code)  # 변환된 코드 출력
+        
+        print("\n실행 결과:")
+        execute_python_code(transpiled_code)  # 변환된 코드를 실행하기
+    except Exception as e:
+        print(f"오류 발생: {e}")
+
+if __name__ == "__main__":
+    main()
