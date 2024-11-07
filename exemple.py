@@ -39,3 +39,16 @@ print("파이썬 코드:")
 print(python_code)    
 print("실행 결과:")
 execute_python_code(python_code)      #파이선 코드로 실행한 결과
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+lines = []
+print("코드를 입력하세요 (종료하려면 빈 줄을 입력하세요):")
+while True:
+    line = input()
+    if line == "":  # 빈 줄 입력 시 종료
+        break
+    lines.append(line)
+
+transpiled_code = transpile(lines)  # 변환된 코드를 얻기
+execute_python_code(transpiled_code)  # 변환된 코드를 실행하기
