@@ -53,3 +53,12 @@ outStr = translator.translate(inStr, dest = 'en', src = 'auto')
 
 # 5. 결과를 출력합니다.
 print(f"{inStr} => {outStr.text}")
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+a,b= map(str,input().split(","))
+search_string = "출력"
+
+if a.find(search_string) != -1:
+    print(b)
+else:
+    print("검색 문자열이 메인 문자열에 포함되어 있지 않습니다.")
