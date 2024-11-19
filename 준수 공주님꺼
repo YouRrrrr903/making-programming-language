@@ -74,3 +74,23 @@ while True:
         print(lines[1])
     else:
         print("검색 문자열이 메인 문자열에 포함되어 있지 않습니다.")
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+print("코드를 입력하세요")
+i=0
+while True:
+    lines = input().split(",")
+
+    # 리스트의 각 요소를 연결하여 하나의 문자열로 만듭니다.
+    joined_lines = ",".join(lines)
+
+    if joined_lines.find("출력") != -1:
+        print(lines)
+        print(lines[1])
+    elif joined_lines.find("반복") != -1:
+      n=int(input("몇번"))
+      def repeat_n_times(n):
+        for i in range(n):
+         print(lines[1])
+         i= i+1
+    else:
+        print("검색 문자열이 메인 문자열에 포함되어 있지 않습니다.")
