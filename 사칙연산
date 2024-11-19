@@ -13,8 +13,8 @@ def transpiler(code):
 def calculation(code, operation, symbol):
     start1 = code.find("(")
     end1 = code.find(")")
-    start2 = code.find("[")
-    end2 = code.find("]")
+    start2 = code.rfind("(")
+    end2 = code.rfind(")")
 
     if start1 != -1 and end1 != -1 and start2 != -1 and end2 != -1:
         num1 = int(code[start1 + 1:end1].strip())
@@ -33,3 +33,14 @@ while True:
         print("변환된 코드(파이썬):")
         print(py_code)
         exec(py_code)
+
+
+
+#예시)
+#입력 : (4) 랑 (5)를 빼기해줘~! ㅋㅋ
+#변환된 파이선 코드 : 4 - 5
+#출력 : 
+
+#입력 : (9)더하기 ( 123)는?
+#변환된 파이선 코드 : 9 + 123
+#출력 : 
