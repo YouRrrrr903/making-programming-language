@@ -25,32 +25,25 @@ https://ichi.pro/ko/python-eulo-jasin-man-ui-peulogeulaeming-eon-eo-mandeulgi-15
 
 
 
-# 사용자 입력을 받습니다.
 input_string = input("입력: ")
 
-# "출력"과 "더하기"가 포함되어 있는지 확인합니다.
 if "출력" in input_string:
     if "더하기" in input_string:
-        # "더하기"를 기준으로 문자열을 나누고, 숫자 추출
         parts = input_string.split("더하기")
         numbers = []
 
         for part in parts:
-            # 각 부분에서 숫자를 추출하고 공백을 제거하여 리스트에 추가
             num = part.strip()
-            if num.isdigit():  # 숫자인지 확인
+            if num.isdigit():
                 numbers.append(int(num))
             else:
-                # 숫자가 아닐 경우, 숫자와 관련된 문자열에서 숫자만 추출
                 try:
-                    # 첫 번째 숫자만 추출
                     number = int(num.split()[0])
                     numbers.append(number)
                 except (ValueError, IndexError):
-                    continue  # 변환이 실패하면 넘어감
+                    continue  
 
         if numbers:
-            # 모든 숫자를 더하기
             result = 0
             for number in numbers:
                 result += number
