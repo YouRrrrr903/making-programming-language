@@ -1,0 +1,11 @@
+test=input() # ``을 출력하라 
+pin = test.find('출')
+print(test[:pin-2])
+
+
+
+test=input() #[출력하고 싶은 값] 을/를 츨력하라 
+if '출력하라' in test:
+  pin= test.find("[")
+  code= test.rfind("]")
+print(test[pin+1:code])
