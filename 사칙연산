@@ -28,7 +28,7 @@ while True:
     code = input("")
     if code.lower == "종료":
         break
-    python_code = transpiler(code)
+    py_code = transpiler(code)
     if py_code:
         print("변환된 코드(파이썬):")
         print(py_code)
@@ -44,3 +44,7 @@ while True:
 #입력 : (9)더하기 ( 123)는?
 #변환된 파이선 코드 : 9 + 123
 #출력 : 
+
+
+-전체 코드 이선주 작성
+- 권솔민이 변수명 오류 수정 도움
