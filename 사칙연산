@@ -1,0 +1,35 @@
+def transpiler(code):
+
+    #사칙연산
+    if "더하기" in code:
+        return calculation(code, "더하기", "+")
+    elif "빼기" in code:
+        return calculation(code, "빼기", "-")
+    elif "곱하기" in code:
+        return calculation(code, "곱하기", "*")
+    elif "나누기" in code:
+        return calculation(code, "나누기", "/")
+
+def calculation(code, operation, symbol):
+    start1 = code.find("(")
+    end1 = code.find(")")
+    start2 = code.find("[")
+    end2 = code.find("]")
+
+    if start1 != -1 and end1 != -1 and start2 != -1 and end2 != -1:
+        num1 = int(code[start1 + 1:end1].strip())
+        num2 = int(code[start2 + 1:end2].strip())
+        return f'{num1} {symbol} {num2}'
+
+    return ""
+
+#파이선 코드로 실행하는 코드-----
+while True:
+    code = input("")
+    if code.lower == "종료":
+        break
+    python_code = transpiler(code)
+    if py_code:
+        print("변환된 코드(파이썬):")
+        print(py_code)
+        exec(py_code)
