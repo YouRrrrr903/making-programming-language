@@ -25,8 +25,8 @@ def calculation(code, operation, symbol):
 
 #파이선 코드로 실행하는 코드-----
 while True:
-    code = input("")
-    if code.lower == "종료":
+    code = input()
+    if code == "종료":
         break
     py_code = transpiler(code)
     if py_code:
