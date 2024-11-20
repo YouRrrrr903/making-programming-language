@@ -109,3 +109,5 @@ if filtered_list:
     print(','.join(filtered_list))  # 리스트를 문자열로 변환하여 출력
 else:
     print("아무것도 출력되지 않습니다.")
+입력: 안녕,#안녕,아나,안녕하세요
+결과: 안녕,아나,안녕하세요
