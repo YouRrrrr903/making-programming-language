@@ -39,10 +39,8 @@ ex) 입력: 3 더하기 3은?
 
 -------------------------------------------------------------------------------
 
-# 사용자 입력을 받습니다.
 input_string = input("입력: ")
 
-# "출력"과 "더하기"가 포함되어 있는지 확인합니다.
 if "출력" in input_string:
     if "더하기" in input_string:
         # "더하기"를 기준으로 문자열을 나누고, 숫자 추출
@@ -50,12 +48,12 @@ if "출력" in input_string:
         numbers = []
 
         for part in parts:
-            # 각 부분에서 숫자를 추출하고 공백을 제거하여 리스트에 추가
+            # 각 부분에서 숫자를 추출, 공백을 제거, 리스트에 추가
             num = part.strip()
             if num.isdigit():  # 숫자인지 확인
                 numbers.append(int(num))
             else:
-                # 숫자가 아닐 경우, 숫자와 관련된 문자열에서 숫자만 추출
+                # 숫자가 아닐 경우 숫자와 관련된 문자열에서 숫자만 추출
                 try:
                     # 첫 번째 숫자만 추출
                     number = int(num.split()[0])
@@ -70,8 +68,8 @@ if "출력" in input_string:
                 result += number
             print(result)
         else:
-            print("유효한 숫자를 입력해야 합니다.")
+            print("유효한 숫자를 입력하세요.")
     else:
-        print("더하기 연산이 포함되어 있지 않습니다.")
+        print("더하기 연산이 포함되지 않았어요.")
 else:
-    print("출력이라는 단어가 포함되어 있지 않습니다.")
+요.")
