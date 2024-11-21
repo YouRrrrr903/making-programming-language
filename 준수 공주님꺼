@@ -111,3 +111,20 @@ else:
     print("아무것도 출력되지 않습니다.")
 입력: 안녕,#안녕,아나,안녕하세요
 결과: 안녕,아나,안녕하세요
+---------------------------------------------------------------------------------
+joined_lines = input("반복 작업을 입력하세요: ")
+if "반복" in joined_lines:
+    if "무한 반복" in joined_lines:
+        print("무한 반복을 시작합니다. 종료하려면 Ctrl+C를 누르세요.")
+        while True:
+            print(1)
+    else:
+        try:
+            n = int(input("몇 번 반복할까요? "))
+            for i in range(1, n + 1):
+                print(1)
+        except ValueError:
+            print("숫자를 입력해야 합니다!")
+else:
+    print("반복 작업이 포함되지 않았습니다.")
+
