@@ -1,0 +1,73 @@
+def transpiler(code):
+    # 출력하기 - 김모현
+    if '출력하라' in code:
+        pin = code.find("[")
+        end = code.rfind("]")
+        return f'print({code[pin+1:end]})'
+
+    # 출력하기 - 박준수
+    if code.find(",") != -1:
+      lines = code.split(",")
+      # 리스트의 각 요소를 연결하여 하나의 문자열로 만듭니다.
+      joined_lines = ",".join(lines)
+
+      if joined_lines.find("출력") != -1:
+        return f'print({lines[1]})'
+
+    # 변수 대입- 이선주
+    if "변수" in code:
+      start1 = code.find("[")
+      end1 = code.find("]")
+      start2 = code.rfind("[")
+      end2 = code.rfind("]")
+
+      var = code[start1 + 1:end1].strip()
+      content = code[start2 + 1:end2].strip()
+
+          # 숫자와 연산이 있는 경우 처리
+      if "더하기" in content or "빼기" in content or "곱하기" in content or "나누기" in content:
+        return f"{var} = {calculation(content)}"
+      else:
+        return f"{var} = {int(content)}"
+    
+    #사칙연산 - 이선주, 권솔민
+    elif "더하기" in content or "빼기" in content or "곱하기" in content or "나누기" in content:
+      return f"{calculation(code)}"
+
+    return ""
+
+
+
+# 사칙연산 - 이선주, 권솔민
+def calculation(code):
+    start1 = code.find("(")
+    end1 = code.find(")")
+    start2 = code.rfind("(")
+    end2 = code.rfind(")")
+    if "더하기" in code:
+      symbol = "+"
+    elif "빼기" in code:
+      symbol = "-"
+    elif "곱하기" in code:
+      symbol = "*"
+    elif "나누기" in code:
+      symbol = "/"
+
+    if start1 != -1 and end1 != -1 and start2 != -1 and end2 != -1:
+        num1 = int(code[start1 + 1:end1].strip())
+        num2 = int(code[start2 + 1:end2].strip())
+        return f'{num1} {symbol} {num2}'
+
+    return ""
+
+
+# 코드 실행
+while True:
+    code = input("입력: ")
+    if code == "종료":
+        break
+    py_code = transpiler(code)
+    if py_code:
+        print("변환된 코드(파이썬):")
+        print(py_code)
+        exec(py_code)
