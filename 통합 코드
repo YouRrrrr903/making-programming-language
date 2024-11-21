@@ -1,4 +1,10 @@
 def transpiler(code):
+  
+    #주석처리 - 권솔민
+    if '#' in code:
+      code = code.split('#')[0]
+      return code
+
     # 출력하기 - 김모현
     if '출력하라' in code:
         pin = code.find("[")
@@ -14,7 +20,7 @@ def transpiler(code):
       if joined_lines.find("출력") != -1:
         return f'print({lines[1]})'
 
-    # 변수 대입- 이선주
+    # 변수 대입?
     if "변수" in code:
       start1 = code.find("[")
       end1 = code.find("]")
@@ -61,7 +67,7 @@ def calculation(code):
     return ""
 
 
-# 코드 실행
+# 코드 실행 - 이선주
 while True:
     code = input("입력: ")
     if code == "종료":
@@ -71,3 +77,4 @@ while True:
         print("변환된 코드(파이썬):")
         print(py_code)
         exec(py_code)
+
