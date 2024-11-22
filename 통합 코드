@@ -40,6 +40,9 @@ def transpiler(code):
     elif "더하기" in content or "빼기" in content or "곱하기" in content or "나누기" in content:
       return f"{calculation(code)}"
 
+    #조건문 
+
+
     return ""
 
 
